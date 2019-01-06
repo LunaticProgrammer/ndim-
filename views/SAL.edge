@@ -1,0 +1,144 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>NDIM Events</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout__title"><B>New Delhi Institute of Managment</B></span>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link" href="/">Post Upcoming Events</a>
+                    <a class="mdl-navigation__link  is-active" href="/see/application">See Applications List</a>
+                    <a class="mdl-navigation__link  is-active" href="/update/data">Update Student Data</a>
+                </nav>
+                <a class="waves-effect waves-light btn-large"  href="/logout" style=" left:100px">LOG OUT</a>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="/">Post Upcoming Events</a>
+                <a class="mdl-navigation__link" href="/see/application">See Applications List</a>
+                <a class="mdl-navigation__link" href="/update/data">Update Student Data</a>
+                
+            </nav>
+            <a class="waves-effect waves-light btn-large"  href="/logout" style=" left:100px">LOG OUT</a>
+        </div>
+        <main class="mdl-layout__content">
+            <div>
+                    <div style="background-color: #edeff2; margin-left: 20%; margin-right: 20%; margin-top: 5%; margin-bottom: 5%;">
+                   <br>
+                   <br>
+                   <br>
+                        <label style="margin-left: 14%;font-size: 16px;"><b>Search Event By Event code</b></label>
+
+        <form action="/event/search1" style="margin-left: 14%;"  method="POST">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" >
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6" >
+            <i class="material-icons">search</i>
+        </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="sample6" name="eventcode" style="width: 232%;">
+            <label class="mdl-textfield__label" for="sample-expandable" >Search Here...</label>
+          </div>
+        </div>
+      </form>
+<br>
+<br>
+      <form>
+      <label style="margin-left: 14%;font-size: 16px;"><b> Event Name</b></label>
+                        <br>
+                       <div class="row" style="margin-left: 14%;">
+                           
+                               <div class="input-field col s8">
+                                 <input disabled value={{ post[0].eventname}} id="disabled" name="eventname"  type="text" class="validate">
+                                 <label for="disabled"></label>
+                               </div>
+                             </div>
+                             <br>
+                             <br>
+                             <label style="margin-left: 14%;font-size: 16px;"><b>Event code</b></label>
+                             <br>
+                             <div class="row" style="margin-left: 14%;">
+                           
+                                    <div class="input-field col s8">
+                                      <input disabled value={{ post[0].eventcode }} id="disabled"  name="eventcode" type="text" class="validate"/>
+                                      <label for="disabled"></label>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <br>
+                                  <label style="margin-left: 14%;font-size: 16px;"><b>Event Category</b></label>
+                                  <br>
+                                  <div class="row" style="margin-left: 14%;">
+                                
+                                         <div class="input-field col s8">
+                                           <input disabled value={{ post[0].category }} id="disabled" name="eventcategory" type="text" class="validate">
+                                           <label for="disabled"></label>
+                                         </div>
+                                       </div>
+                                 <br>
+                                 <br>
+                                 <br>
+                                 
+                                   
+                               <br>
+                               <br>
+                               <br>
+                               
+                           
+                       </form>
+                       <form action="/event/download/applications" method="POST">
+                        <input hidden type="text" value= {{post[0].eventcode}} name="eventcode">   
+                       <button class="btn waves-effect waves-light col s6" type="submit" name="action" style="margin-left: 35%; " ><b>Download Applications List</b>
+                       </button>
+                        </form>
+                       <hr>
+                       <form action="/event/download/attachments" method="post">
+                        <input hidden type="text" value= {{post[0].eventcode}} name="eventcode">
+                       <button class="btn waves-effect waves-light" type="submit" name="action" style="margin-left: 35%; " ><b>Download Attachments</b>
+                       </button>
+                       </form>
+                     <br>
+                     <hr>
+                     <form action="/event/deactivate" method="POST">
+                     <input hidden type="text" value= {{post[0].eventcode}} name="eventcode">
+                     <button class="btn waves-effect waves-light" type="submit" name="action" style="margin-left: 35%; " ><b>Deactivate Event</b>
+                     </button>
+                    </form>
+                           <br>
+                           <br>
+                           
+                           
+                   
+                        </div>
+            </div>
+            
+        </main>
+    </div>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+
+</html>

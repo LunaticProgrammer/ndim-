@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>NDIM Events</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</head>
+
+<body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+        <div style="background-color: #edeff2; margin-left: 30%; margin-right: 30%; width: 40%; border: 1px solid  rgb(25, 25, 26);">
+        <div class="row" >
+                <form class="col s12" action="/apply/store" method="POST" encType="multipart/form-data">
+                  <div class="row">
+                    <br>
+                    <br>
+                    <div class="input-field col s4" style="margin-left:20%; margin-right:20%; width:60%;">
+                      <input id="last_name" type="text" class="validate" name="rollno"  >
+                      <label for="last_name">Enter Roll Number</label>
+                    </div>
+                  </div>
+                  <label style="margin-left:20%; margin-right:20%; width:60%;" ><b>Select Category</b></label>
+                  <select class="browser-default" style="margin-left:20%; margin-right:20%; width:60%;" name="year">
+                    <option value="" disabled selected>Choose Year</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+
+                  </select>
+                  <br>
+                  <br>
+                  <div class="input-field col s4" style="margin-left:20%; margin-right:20%; width:60%;">
+                    <input id="last_name" type="text" class="validate" name="studentName"  >
+                    <label for="last_name">Enter your name</label>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+
+                  <label style="margin-left:20%; margin-right:20%; width:60%;" ><b>Select Batch</b></label>
+                  <select class="browser-default" style="margin-left:20%; margin-right:20%; width:60%;" name="batch">
+                    <option value="" disabled selected>Choose Batch</option>
+                    <option value="ALPHA">ALPHA</option>
+                    <option value="BETA">BETA</option>
+                  </select>
+                
+              </div>
+              <br>
+              <br>
+
+              <label style="margin-left:20%; margin-right:20%; width:60%;"> Remarks </label>
+                  <div class="input-field " >
+                        <input disabled value = {{data.Remarks}} id="disabled" type="text"  class="validate"style="margin-left:20%; margin-right:20%; width:60%;">
+                        <label for="disabled"></label>
+                      </div>
+                      <br>
+                      <div class="input-field " >
+                        <input hidden value = {{data.eventcode}} id="disabled" type="text" name="eventcode"  class="validate"style="margin-left:20%; margin-right:20%; width:60%;">
+                        <label for="disabled"></label>
+                      </div>
+                      <br>
+
+                      <div class="input-field " >
+                            <textarea id="textarea1" class="materialize-textarea" name="studentdetails" style="margin-left:20%; margin-right:20%; width:60%;" ></textarea>
+                            <label for="textarea1" style="margin-left:20%; margin-right:20%; width:60%;"><b>Enter Your Details</b></label>
+                          </div>
+                        
+                          <br>
+                          <br>
+                          
+                                
+                          <div class="form-group mt-5">
+                              <input type="file" name="image"  style="margin-left:20%; margin-right:20%; width:60%;">
+                            </div>
+                                <br>
+                                <br>
+
+                                <button style="margin-left:35%; margin-right:35%; width:30%;" class="btn waves-effect waves-light"> submit </button>
+                              </form>
+                              <br>
+    <br>
+    <br>
+    <br>
+                                    
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+
+</html>

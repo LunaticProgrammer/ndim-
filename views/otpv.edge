@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>NDIM Events</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</head>
+
+<body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+        <div style="background-color: #edeff2; margin-left: 30%; margin-right: 30%; width: 40%; border: 1px solid  rgb(25, 25, 26);">
+        <div class="row" >
+                <form class="col s12" action="/otp/send" method="POST" encType="multipart/form-data">
+                  <div class="row">
+                    <br>
+                    <br>
+                    <div class="input-field col s4" style="margin-left:20%; margin-right:20%; width:60%;">
+                      <input id="last_name" type="text" class="validate" name="rollno"  >
+                      <label for="last_name">Enter Roll Number</label>
+                    </div>
+                  </div>
+                  <label style="margin-left:20%; margin-right:20%; width:60%;" ><b>Select Category</b></label>
+                  <select class="browser-default" style="margin-left:20%; margin-right:20%; width:60%;" name="year">
+                    <option value="" disabled selected>Choose Year</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                  </select>
+                  <br>
+                  <br>
+                <input type="text" hidden name="eventcode" value={{ post[0].eventcode }}>
+                <input type="text" hidden name="Remarks" value={{post[0].Remarks}}>
+                  <button class="btn waves-effect waves-light" style="margin-left:35%; margin-right:35%; width:30%;" onclick="window.alert('OTP WAS SENT!')" type="submit" name="action">Send OTP
+                        <i class="material-icons right">send</i>
+                      </button>
+                
+              </div>
+              <br>
+
+             
+                 <br>
+
+                  
+                      <br>
+
+                      
+                        
+                          <br>
+                          <br>
+                          
+                                
+                         
+                                <br>
+                                <br>
+
+                                
+                              </form>
+                              <form class="col s12" action="/otp/verify" method="POST" encType="multipart/form-data">
+                                <div class="row">
+                                    <div class="input-field col s4"  style="margin-left:20%; margin-right:20%; width:60%;">
+                                      <input id="last_name" type="text" class="validate" name="otp">
+                                      <label for="last_name">Enter OTP</label>
+                                    </div>
+                                    <label style="margin-left: 20%"> Roll no: </label>
+                                    <br>
+                                    <input id="last_name" style="width: 50%; margin-left:20%" disabled  value={{data.rollno}} type="text" class="validate" name="rollno"  >
+                                    <br>
+                                    <label style="margin-left: 20%" > Year : </label>
+                                    <br>
+                                    <input id="last_name" style="width: 50%; margin-left:20%" disabled value={{data.year}} type="text" class="validate" name="year"  >
+                                    <input id="last_name"  hidden value={{data.eventcode}} type="text" class="validate" name="eventcode"  >
+                                    <input id="last_name"  hidden value={{data.Remarks}} type="text" class="validate" name="Remarks"  >
+                                    <button style="margin-left: 40%"> submit </button>
+                                  </div>
+                            </form>
+                              <br>
+    <br>
+    <br>
+    <br>
+                                    
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+
+</html>
