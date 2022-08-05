@@ -24,7 +24,7 @@
     "gulp-util": "^3.0.8",
     "gutil": "^1.6.4",
     "json2csv": "^4.2.1",
-    "mongoose": "^5.1.6",
+    "mongoose": "^5.7.5",
     "node-xlsx": "^0.12.1",
     "nodemailer": "^4.6.7",
     "twilio": "^3.19.0",
